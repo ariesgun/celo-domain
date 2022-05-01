@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/celo-domain/static/css/main.d20b44d7.chunk.css",
+    "main.js": "/celo-domain/static/js/main.df8a7c8f.chunk.js",
+    "main.js.map": "/celo-domain/static/js/main.df8a7c8f.chunk.js.map",
+    "runtime-main.js": "/celo-domain/static/js/runtime-main.3724ba83.js",
+    "runtime-main.js.map": "/celo-domain/static/js/runtime-main.3724ba83.js.map",
+    "static/css/2.804332bd.chunk.css": "/celo-domain/static/css/2.804332bd.chunk.css",
+    "static/js/2.c96fa9df.chunk.js": "/celo-domain/static/js/2.c96fa9df.chunk.js",
+    "static/js/2.c96fa9df.chunk.js.map": "/celo-domain/static/js/2.c96fa9df.chunk.js.map",
+    "static/js/3.891b6101.chunk.js": "/celo-domain/static/js/3.891b6101.chunk.js",
+    "static/js/3.891b6101.chunk.js.map": "/celo-domain/static/js/3.891b6101.chunk.js.map",
+    "index.html": "/celo-domain/index.html",
+    "static/css/2.804332bd.chunk.css.map": "/celo-domain/static/css/2.804332bd.chunk.css.map",
+    "static/css/main.d20b44d7.chunk.css.map": "/celo-domain/static/css/main.d20b44d7.chunk.css.map",
+    "static/js/2.c96fa9df.chunk.js.LICENSE.txt": "/celo-domain/static/js/2.c96fa9df.chunk.js.LICENSE.txt",
+    "static/media/bootstrap-icons.css": "/celo-domain/static/media/bootstrap-icons.c1d7432e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3724ba83.js",
+    "static/css/2.804332bd.chunk.css",
+    "static/js/2.c96fa9df.chunk.js",
+    "static/css/main.d20b44d7.chunk.css",
+    "static/js/main.df8a7c8f.chunk.js"
+  ]
+}
