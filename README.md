@@ -33,6 +33,19 @@ cd celo-domain
 npm install
 ```
 
+### 2.2 Navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+### 2.3 Install the frontend dependencies:
+
+```bash
+npm install
+```
+
+
 ### 2.4 Run the dapp:
 
 ```bash

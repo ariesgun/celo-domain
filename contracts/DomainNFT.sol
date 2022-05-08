@@ -43,7 +43,7 @@ contract DomainNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         require(valid(name), "Name is not valid");
 
         uint256 _price = price();
-        require(msg.value >= _price, "Not enought tokens paid");
+        require(msg.value >= _price, "Not enough tokens paid");
 
         // Combine the name passed into the function  with the TLD
         string memory _name = string(
@@ -84,6 +84,7 @@ contract DomainNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         _tokenIdCounter.increment();
     }
 
+    //    admin function to withdraw all funds
     function withdraw() public onlyOwner {
         uint256 amount = address(this).balance;
 
@@ -91,6 +92,14 @@ contract DomainNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         require(success, "Failed to withdraw tokens");
     }
 
+    //    admin function to withdraw amount of funds
+    function withdrawAmount(uint256 _amount) public onlyOwner {
+
+        (bool success, ) = msg.sender.call{value: _amount}("");
+        require(success, "Failed to withdraw tokens");
+    }
+
+    //    GET All names owned on the contract
     function getAllNames() public view returns (string[] memory) {
         string[] memory allNames = new string[](_tokenIdCounter.current());
         for (uint256 i = 0; i < _tokenIdCounter.current(); i++) {
@@ -100,12 +109,14 @@ contract DomainNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         return allNames;
     }
 
+
+    //    check if the name is valid
     function valid(string calldata name) public pure returns (bool) {
         return bytes(name).length >= 3 && bytes(name).length < 10;
     }
 
     function price() public pure returns (uint256) {
-        return 0.1 * 10**17;
+        return 1 ether;
     }
 
     function getAddress(string calldata name) public view returns (address) {

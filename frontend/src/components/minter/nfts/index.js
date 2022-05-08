@@ -9,8 +9,7 @@ import { NotificationSuccess, NotificationError } from '../../ui/Notifications';
 import {
   getNfts,
   createNft,
-  editRecordNft,
-  fetchNftContractOwner,
+  editRecordNft
 } from "../../../utils/minter";
 import { Row } from "react-bootstrap";
 
@@ -19,7 +18,7 @@ const NftList = ({ minterContract, name }) => {
   const { performActions, address } = useContractKit();
   const [ nfts, setNfts ] = useState([]);
   const [ loading, setLoading ] = useState(false);
-  const [ nftOwner, setNftOwner ] = useState(null);
+  // const [ nftOwner, setNftOwner ] = useState(null);
 
   const getAssets = useCallback(async () => {
     try {
@@ -63,22 +62,22 @@ const NftList = ({ minterContract, name }) => {
     }
   }
 
-  const fetchContractOwner = useCallback(async (minterContract) => {
-    const _address = await fetchNftContractOwner(minterContract);
-    setNftOwner(_address);  
-  }, []);
-  
+  // const fetchContractOwner = useCallback(async (minterContract) => {
+  //   const _address = await fetchNftContractOwner(minterContract);
+  //   setNftOwner(_address);
+  // }, []);
+
   useEffect(() => {
     try {
       console.log("Hey ", minterContract);
       if (address && minterContract) {
         getAssets();
-        fetchContractOwner(minterContract);
+        // fetchContractOwner(minterContract);
       }
     } catch (error) {
       console.log( {error });
     }
-  }, [minterContract, address, getAssets, fetchContractOwner]);
+  }, [minterContract, address, getAssets]);
 
   if (address) {
     return (
@@ -87,9 +86,9 @@ const NftList = ({ minterContract, name }) => {
           <>
             <div className="d-flex justify-content-between align-items-center mb-4">
               <h1 className="fs-2 fw-bold mb-1">{name}</h1>
-              {nftOwner === address ? (
+              {/*{nftOwner === address ? (*/}
                 <AddNfts save={addNft} address={address} />
-              ) : null}
+              {/*) : null}*/}
             </div>
             <Row xs={1} sm={2} lg={3} className="g-3  mb-5 g-xl-4 g-xxl-5">
               {nfts.map((_nft) => (
